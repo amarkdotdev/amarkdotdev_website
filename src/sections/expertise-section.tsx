@@ -12,7 +12,7 @@ export function ExpertiseSection() {
   return (
     <section
       id="expertise"
-      className="relative border-t border-white/[0.06] bg-gradient-to-b from-site-teal/[0.04] to-transparent px-6 py-16 sm:px-8 sm:py-20 md:px-10 md:py-24"
+      className="relative border-t border-white/[0.08] bg-gradient-section-teal px-6 py-16 sm:px-8 sm:py-20 md:px-10 md:py-24"
     >
       <div className="mx-auto w-full max-w-6xl space-y-12">
         <SectionHeading
@@ -29,16 +29,16 @@ export function ExpertiseSection() {
             return (
               <div
                 key={item.title}
-                className={`relative overflow-hidden rounded-3xl border shadow-card-inner backdrop-blur-md transition ${
+                className={`relative overflow-hidden rounded-3xl border-l-4 border-l-teal-400 shadow-card-inner backdrop-blur-md transition ${
                   isOpen
-                    ? "border-site-teal/25 bg-white/[0.06] shadow-card-glow"
-                    : "border-white/[0.08] bg-white/[0.04] hover:border-site-teal/20 hover:bg-white/[0.05]"
+                    ? "border border-teal-400/40 bg-white/[0.06] shadow-card-glow-teal"
+                    : "border border-white/[0.1] bg-white/[0.05] hover:border-teal-400/35 hover:shadow-card-glow-teal"
                 }`}
               >
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="flex min-h-11 w-full min-w-0 items-center justify-between gap-6 px-6 py-5 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-site-teal/55 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-white/[0.04] md:px-8"
+                  className="flex min-h-11 w-full min-w-0 items-center justify-between gap-6 px-6 py-5 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-400 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-white/[0.04] md:px-8"
                   aria-expanded={isOpen}
                   aria-controls={`expertise-panel-${index}`}
                 >
@@ -49,10 +49,10 @@ export function ExpertiseSection() {
                     <p className="mt-2 text-pretty text-sm leading-[1.6] text-zinc-300">{item.summary}</p>
                   </div>
                   <span
-                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-sm transition ${
+                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 text-sm font-medium transition ${
                       isOpen
-                        ? "border-site-teal/35 bg-site-teal/20 text-site-teal"
-                        : "border-white/15 bg-white/5 text-zinc-400"
+                        ? "border-teal-400 bg-teal-500/40 text-teal-200"
+                        : "border-teal-400/40 bg-teal-500/20 text-zinc-400"
                     }`}
                   >
                     {isOpen ? "−" : "+"}
@@ -79,7 +79,7 @@ export function ExpertiseSection() {
                             key={point}
                             className="flex items-start gap-3 break-words text-pretty text-sm leading-[1.6] text-zinc-300"
                           >
-                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-site-teal/60" />
+                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" />
                             {point}
                           </li>
                         ))}

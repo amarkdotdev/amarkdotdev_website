@@ -4,7 +4,7 @@ export function BeforeYouGoSection() {
   return (
     <section
       aria-label="Before you go"
-      className="relative border-t border-white/[0.06] px-6 py-16 sm:px-8 sm:py-20 md:px-10 md:py-24"
+      className="relative border-t border-white/[0.08] bg-gradient-section-cyan px-6 py-16 sm:px-8 sm:py-20 md:px-10 md:py-24"
     >
       <div className="mx-auto max-w-2xl text-center">
         <Reveal>
@@ -17,7 +17,7 @@ export function BeforeYouGoSection() {
           <div className="mt-6 flex justify-center">
             <a
               href="#contact"
-              className="inline-flex min-h-11 min-w-[44px] items-center rounded-full bg-cyan-300/95 px-5 py-2.5 text-sm font-semibold text-zinc-950 shadow-glow transition hover:bg-cyan-200 hover:shadow-glow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-cyan-200"
+              className="inline-flex min-h-11 min-w-[44px] items-center rounded-full bg-cyan-400 px-5 py-2.5 text-sm font-semibold text-zinc-950 shadow-glow transition hover:bg-cyan-300 hover:shadow-glow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-cyan-300"
             >
               Get in touch
             </a>

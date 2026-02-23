@@ -15,15 +15,15 @@ export function HeroSection() {
 
   return (
     <section className="relative flex min-h-[80dvh] min-h-screen items-center overflow-x-hidden px-6 pb-20 pt-32 sm:min-h-[90dvh] sm:px-8 md:px-10">
-      {/* Hero: refined multi-color radial glows for depth */}
+      {/* Hero: strong cyan glow + violet/amber orbs – clearly visible */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
       >
-        <div className="absolute -top-40 left-1/2 h-[32rem] w-[48rem] -translate-x-1/2 rounded-full bg-cyan-500/[0.08] blur-[100px]" />
-        <div className="absolute -top-20 left-1/2 h-[24rem] w-[36rem] -translate-x-1/2 rounded-full bg-cyan-400/[0.06] blur-[80px]" />
-        <div className="absolute right-[10%] top-[20%] h-[20rem] w-[28rem] rounded-full bg-violet-500/[0.06] blur-[90px]" />
-        <div className="absolute bottom-[15%] left-[15%] h-[16rem] w-[24rem] rounded-full bg-amber-500/[0.04] blur-[80px]" />
+        <div className="absolute -top-40 left-1/2 h-[40rem] w-[56rem] -translate-x-1/2 rounded-full bg-cyan-400/25 blur-[120px]" />
+        <div className="absolute -top-20 left-1/2 h-[28rem] w-[40rem] -translate-x-1/2 rounded-full bg-cyan-300/18 blur-[100px]" />
+        <div className="absolute right-[10%] top-[20%] h-[24rem] w-[32rem] rounded-full bg-violet-500/22 blur-[100px]" />
+        <div className="absolute bottom-[15%] left-[15%] h-[20rem] w-[28rem] rounded-full bg-amber-400/15 blur-[90px]" />
       </div>
 
       <div className="mx-auto w-full max-w-6xl">
@@ -35,7 +35,7 @@ export function HeroSection() {
               ? { duration: 0 }
               : { duration: 0.65, ease: [0.22, 1, 0.36, 1] }
           }
-          className="mb-5 text-xs font-medium uppercase tracking-[0.28em] text-amber-200/90"
+          className="mb-5 text-xs font-medium uppercase tracking-[0.28em] text-amber-300"
         >
           {siteContent.name} · {siteContent.role}
         </motion.p>
@@ -48,9 +48,9 @@ export function HeroSection() {
               ? { duration: 0 }
               : { duration: 0.75, delay: 0.05, ease: [0.22, 1, 0.36, 1] }
           }
-          className="max-w-5xl break-words text-balance text-3xl font-semibold leading-[1.15] tracking-tight text-zinc-50 sm:text-4xl md:text-6xl md:leading-tight lg:text-7xl"
+          className="max-w-5xl break-words text-balance text-3xl font-semibold leading-[1.15] tracking-tight sm:text-4xl md:text-6xl md:leading-tight lg:text-7xl"
         >
-          <span className="bg-gradient-to-b from-zinc-50 via-zinc-100 to-zinc-300/95 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-cyan-300 via-violet-400 to-teal-300 bg-clip-text text-transparent">
             {siteContent.headline}
           </span>
         </motion.h1>
@@ -68,7 +68,7 @@ export function HeroSection() {
           {siteContent.subheadline}
         </motion.p>
 
-        {/* Trust signals */}
+        {/* Trust signals: solid accent fills / strong borders */}
         <motion.div
           initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -82,12 +82,12 @@ export function HeroSection() {
           {trustSignals.map((signal, i) => (
             <span
               key={signal}
-              className={`rounded-full border px-4 py-1.5 text-xs tracking-[0.1em] text-zinc-300 transition-colors ${
+              className={`rounded-full border-2 px-4 py-1.5 text-xs font-medium tracking-[0.1em] transition ${
                 i % 3 === 0
-                  ? "border-cyan-500/20 bg-cyan-500/[0.06] hover:border-cyan-400/25"
+                  ? "border-cyan-400 bg-cyan-500/25 text-cyan-100 hover:bg-cyan-500/35"
                   : i % 3 === 1
-                    ? "border-violet-500/20 bg-violet-500/[0.05] hover:border-violet-400/25"
-                    : "border-teal-500/20 bg-teal-500/[0.05] hover:border-teal-400/25"
+                    ? "border-violet-400 bg-violet-500/25 text-violet-100 hover:bg-violet-500/35"
+                    : "border-teal-400 bg-teal-500/25 text-teal-100 hover:bg-teal-500/35"
               }`}
             >
               {signal}
@@ -107,13 +107,13 @@ export function HeroSection() {
         >
           <a
             href="#contact"
-            className="inline-flex min-h-11 min-w-[44px] items-center rounded-full bg-cyan-300/95 px-6 py-3 text-sm font-semibold text-zinc-950 shadow-glow transition hover:bg-cyan-200 hover:shadow-glow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-cyan-200 active:shadow-glow-soft"
+            className="inline-flex min-h-11 min-w-[44px] items-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-zinc-950 shadow-glow transition hover:bg-cyan-300 hover:shadow-glow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-cyan-300 active:shadow-glow-soft"
           >
             Get in Touch
           </a>
           <a
             href="#projects"
-            className="inline-flex min-h-11 min-w-[44px] items-center rounded-full border border-site-violet/30 bg-white/[0.06] px-6 py-3 text-sm font-medium text-zinc-100 transition hover:border-site-violet/50 hover:bg-site-violet/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-site-violet/50 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-site-violet/15 active:border-site-violet/40"
+            className="inline-flex min-h-11 min-w-[44px] items-center rounded-full border-2 border-violet-400 bg-violet-500/20 px-6 py-3 text-sm font-medium text-violet-100 transition hover:border-violet-300 hover:bg-violet-500/30 hover:shadow-glow-violet focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-violet-500/35"
           >
             View Projects
           </a>

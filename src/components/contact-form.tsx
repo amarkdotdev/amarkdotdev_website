@@ -38,7 +38,7 @@ export function ContactForm() {
           required
           name="name"
           type="text"
-          className="min-h-11 w-full rounded-2xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-base text-zinc-100 outline-none transition focus-visible:border-cyan-300/50 focus-visible:bg-white/[0.06] focus-visible:ring-2 focus-visible:ring-cyan-300/45 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:border-cyan-300/45 active:bg-white/[0.07]"
+          className="min-h-11 w-full rounded-2xl border border-white/[0.1] bg-white/[0.05] px-4 py-3 text-base text-zinc-100 outline-none transition focus-visible:border-cyan-400 focus-visible:bg-white/[0.06] focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:border-cyan-400 active:bg-white/[0.07]"
         />
       </label>
 
@@ -48,7 +48,7 @@ export function ContactForm() {
           required
           name="email"
           type="email"
-          className="min-h-11 w-full rounded-2xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-base text-zinc-100 outline-none transition focus-visible:border-cyan-300/50 focus-visible:bg-white/[0.06] focus-visible:ring-2 focus-visible:ring-cyan-300/45 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:border-cyan-300/45 active:bg-white/[0.07]"
+          className="min-h-11 w-full rounded-2xl border border-white/[0.1] bg-white/[0.05] px-4 py-3 text-base text-zinc-100 outline-none transition focus-visible:border-cyan-400 focus-visible:bg-white/[0.06] focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:border-cyan-400 active:bg-white/[0.07]"
         />
       </label>
 
@@ -58,7 +58,7 @@ export function ContactForm() {
           required
           name="message"
           rows={5}
-          className="min-h-11 w-full resize-none rounded-2xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-base leading-[1.6] text-zinc-100 outline-none transition focus-visible:border-cyan-300/50 focus-visible:bg-white/[0.06] focus-visible:ring-2 focus-visible:ring-cyan-300/45 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:border-cyan-300/45 active:bg-white/[0.07]"
+          className="min-h-11 w-full resize-none rounded-2xl border border-white/[0.1] bg-white/[0.05] px-4 py-3 text-base leading-[1.6] text-zinc-100 outline-none transition focus-visible:border-cyan-400 focus-visible:bg-white/[0.06] focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:border-cyan-400 active:bg-white/[0.07]"
         />
       </label>
 
@@ -66,7 +66,7 @@ export function ContactForm() {
         whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
         disabled={isSubmitting}
         type="submit"
-        className="inline-flex min-h-11 w-full min-w-0 items-center justify-center rounded-full bg-cyan-300/95 px-6 py-3 text-sm font-semibold text-zinc-950 shadow-glow transition hover:bg-cyan-200 hover:shadow-glow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/55 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-cyan-200 disabled:cursor-wait disabled:opacity-80 disabled:shadow-none sm:w-auto sm:min-w-48"
+        className="inline-flex min-h-11 w-full min-w-0 items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-zinc-950 shadow-glow transition hover:bg-cyan-300 hover:shadow-glow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-cyan-300 disabled:cursor-wait disabled:opacity-80 disabled:shadow-none sm:w-auto sm:min-w-48"
       >
         {isSubmitting ? "Transmitting..." : "Send Message"}
       </motion.button>
@@ -77,7 +77,7 @@ export function ContactForm() {
             initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.3 }}
-            className="text-sm text-cyan-100/80"
+            className="text-sm font-medium text-cyan-200"
           >
             Your mail client opened with the message draft.
           </motion.p>
