@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import { personJsonLd } from "@/lib/schema";
+import { personJsonLd, websiteJsonLd } from "@/lib/schema";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,6 +8,11 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "Aaron Mark | DevOps / Python Engineer",
@@ -27,11 +32,12 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Aaron Mark | DevOps / Python Engineer",
     description:
       "Infrastructure reliability, security automation, and production delivery.",
   },
+  icons: { icon: "/favicon.ico" },
 };
 
 export default function RootLayout({
@@ -39,14 +45,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const structuredData = personJsonLd();
+  const personStructuredData = personJsonLd();
+  const websiteStructuredData = websiteJsonLd();
 
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} antialiased`}>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personStructuredData) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteStructuredData) }}
         />
         {children}
       </body>

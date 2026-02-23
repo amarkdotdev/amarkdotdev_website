@@ -14,7 +14,7 @@ export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="relative flex min-h-screen items-center px-6 pb-20 pt-32 md:px-10">
+    <section className="relative flex min-h-[80dvh] min-h-screen items-center overflow-x-hidden px-6 pb-20 pt-32 sm:min-h-[90dvh] sm:px-8 md:px-10">
       {/* Hero-specific layered radial glows */}
       <div
         aria-hidden
@@ -46,7 +46,7 @@ export function HeroSection() {
               ? { duration: 0 }
               : { duration: 0.75, delay: 0.05, ease: [0.22, 1, 0.36, 1] }
           }
-          className="max-w-5xl text-balance text-4xl font-semibold tracking-tight text-zinc-50 md:text-6xl lg:text-7xl"
+          className="max-w-5xl break-words text-balance text-3xl font-semibold leading-[1.15] tracking-tight text-zinc-50 sm:text-4xl md:text-6xl md:leading-tight lg:text-7xl"
         >
           <span className="bg-gradient-to-b from-zinc-50 to-zinc-300/90 bg-clip-text text-transparent">
             {siteContent.headline}
@@ -61,7 +61,7 @@ export function HeroSection() {
               ? { duration: 0 }
               : { duration: 0.75, delay: 0.15, ease: [0.22, 1, 0.36, 1] }
           }
-          className="mt-7 max-w-2xl text-lg leading-8 text-zinc-300 md:text-xl"
+          className="mt-7 max-w-2xl break-words text-pretty text-base leading-7 text-zinc-300 sm:text-lg sm:leading-[1.65] md:text-xl md:leading-8"
         >
           {siteContent.subheadline}
         </motion.p>
@@ -98,17 +98,27 @@ export function HeroSection() {
           className="mt-10 flex flex-wrap gap-4"
         >
           <a
-            href="#projects"
-            className="rounded-full bg-cyan-300/95 px-6 py-3 text-sm font-semibold text-zinc-950 shadow-glow transition hover:bg-cyan-200 hover:shadow-glow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg"
-          >
-            View Projects
-          </a>
-          <a
             href="#contact"
-            className="rounded-full border border-white/20 bg-white/[0.06] px-6 py-3 text-sm font-medium text-zinc-100 transition hover:border-cyan-100/40 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg"
+            className="inline-flex min-h-11 min-w-[44px] items-center rounded-full bg-cyan-300/95 px-6 py-3 text-sm font-semibold text-zinc-950 shadow-glow transition hover:bg-cyan-200 hover:shadow-glow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-cyan-200 active:shadow-glow-soft"
           >
             Get in Touch
           </a>
+          <a
+            href="#projects"
+            className="inline-flex min-h-11 min-w-[44px] items-center rounded-full border border-white/20 bg-white/[0.06] px-6 py-3 text-sm font-medium text-zinc-100 transition hover:border-cyan-100/40 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-white/12 active:border-cyan-100/30"
+          >
+            View Projects
+          </a>
+          {siteContent.calendlyUrl && (
+            <a
+              href={siteContent.calendlyUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-flex min-h-11 min-w-[44px] items-center rounded-full border border-white/20 bg-white/[0.06] px-6 py-3 text-sm font-medium text-zinc-100 transition hover:border-cyan-100/40 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-white/12 active:border-cyan-100/30"
+            >
+              Book a call
+            </a>
+          )}
         </motion.div>
       </div>
     </section>

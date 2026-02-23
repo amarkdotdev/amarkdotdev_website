@@ -33,32 +33,32 @@ export function ContactForm() {
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
       <label className="block space-y-2">
-        <span className="text-xs uppercase tracking-[0.18em] text-zinc-300">Name</span>
+        <span className="text-xs uppercase tracking-[0.18em] leading-relaxed text-zinc-300">Name</span>
         <input
           required
           name="name"
           type="text"
-          className="w-full rounded-2xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-zinc-100 outline-none transition focus-visible:border-cyan-200/70 focus-visible:bg-white/[0.06] focus-visible:ring-2 focus-visible:ring-cyan-200/55"
+          className="min-h-11 w-full rounded-2xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-base text-zinc-100 outline-none transition focus-visible:border-cyan-200/70 focus-visible:bg-white/[0.06] focus-visible:ring-2 focus-visible:ring-cyan-200/55 active:border-cyan-200/50 active:bg-white/[0.07]"
         />
       </label>
 
       <label className="block space-y-2">
-        <span className="text-xs uppercase tracking-[0.18em] text-zinc-300">Email</span>
+        <span className="text-xs uppercase tracking-[0.18em] leading-relaxed text-zinc-300">Email</span>
         <input
           required
           name="email"
           type="email"
-          className="w-full rounded-2xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-zinc-100 outline-none transition focus-visible:border-cyan-200/70 focus-visible:bg-white/[0.06] focus-visible:ring-2 focus-visible:ring-cyan-200/55"
+          className="min-h-11 w-full rounded-2xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-base text-zinc-100 outline-none transition focus-visible:border-cyan-200/70 focus-visible:bg-white/[0.06] focus-visible:ring-2 focus-visible:ring-cyan-200/55 active:border-cyan-200/50 active:bg-white/[0.07]"
         />
       </label>
 
       <label className="block space-y-2">
-        <span className="text-xs uppercase tracking-[0.18em] text-zinc-300">Message</span>
+        <span className="text-xs uppercase tracking-[0.18em] leading-relaxed text-zinc-300">Message</span>
         <textarea
           required
           name="message"
           rows={5}
-          className="w-full resize-none rounded-2xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-zinc-100 outline-none transition focus-visible:border-cyan-200/70 focus-visible:bg-white/[0.06] focus-visible:ring-2 focus-visible:ring-cyan-200/55"
+          className="min-h-11 w-full resize-none rounded-2xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-base leading-[1.6] text-zinc-100 outline-none transition focus-visible:border-cyan-200/70 focus-visible:bg-white/[0.06] focus-visible:ring-2 focus-visible:ring-cyan-200/55 active:border-cyan-200/50 active:bg-white/[0.07]"
         />
       </label>
 
@@ -66,7 +66,7 @@ export function ContactForm() {
         whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
         disabled={isSubmitting}
         type="submit"
-        className="inline-flex min-w-48 items-center justify-center rounded-full bg-cyan-300/95 px-6 py-3 text-sm font-semibold text-zinc-950 shadow-glow transition hover:bg-cyan-200 hover:shadow-glow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg disabled:cursor-wait disabled:opacity-80 disabled:shadow-none"
+        className="inline-flex min-h-11 w-full min-w-0 items-center justify-center rounded-full bg-cyan-300/95 px-6 py-3 text-sm font-semibold text-zinc-950 shadow-glow transition hover:bg-cyan-200 hover:shadow-glow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-cyan-200 disabled:cursor-wait disabled:opacity-80 disabled:shadow-none sm:w-auto sm:min-w-48"
       >
         {isSubmitting ? "Transmitting..." : "Send Message"}
       </motion.button>

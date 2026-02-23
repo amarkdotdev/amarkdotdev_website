@@ -12,7 +12,7 @@ export function ExpertiseSection() {
   return (
     <section
       id="expertise"
-      className="relative border-t border-white/[0.06] px-6 py-24 md:px-10"
+      className="relative border-t border-white/[0.06] px-6 py-16 sm:px-8 sm:py-20 md:px-10 md:py-24"
     >
       <div className="mx-auto w-full max-w-6xl space-y-12">
         <SectionHeading
@@ -37,14 +37,14 @@ export function ExpertiseSection() {
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg md:px-8"
+                  className="flex min-h-11 w-full min-w-0 items-center justify-between gap-6 px-6 py-5 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-white/[0.04] md:px-8"
                   aria-expanded={isOpen}
                 >
-                  <div>
-                    <p className="text-xl font-semibold text-zinc-100">
+                  <div className="min-w-0 flex-1 break-words">
+                    <p className="text-balance text-lg font-semibold leading-snug text-zinc-100 sm:text-xl">
                       {item.title}
                     </p>
-                    <p className="mt-2 text-sm text-zinc-300">{item.summary}</p>
+                    <p className="mt-2 text-pretty text-sm leading-[1.6] text-zinc-300">{item.summary}</p>
                   </div>
                   <span
                     className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-sm transition ${
@@ -74,7 +74,7 @@ export function ExpertiseSection() {
                         {item.points.map((point) => (
                           <li
                             key={point}
-                            className="flex items-start gap-3 text-sm leading-7 text-zinc-300"
+                            className="flex items-start gap-3 break-words text-pretty text-sm leading-[1.6] text-zinc-300"
                           >
                             <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300/50" />
                             {point}

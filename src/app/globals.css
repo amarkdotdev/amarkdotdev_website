@@ -7,30 +7,79 @@
   --color-foreground: var(--site-fg);
 }
 
+html {
+  font-size: var(--text-base);
+  overflow-x: hidden;
+}
+
 body {
   background: var(--site-bg);
   color: var(--site-fg);
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: var(--leading-body);
   min-height: 100vh;
+  min-height: 100dvh;
   text-rendering: optimizeLegibility;
   font-feature-settings: "ss01" on, "cv11" on;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+@media (max-width: 767px) {
+  body {
+    line-height: var(--leading-body-mobile);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: var(--header-height, 5rem);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: var(--header-height, 5rem);
   }
+}
+
+/* Anchor targets: offset for fixed header so content isn’t hidden (hash scroll + scrollIntoView) */
+#main-content,
+#about,
+#expertise,
+#projects,
+#principles,
+#contact,
+#radar,
+#flagship,
+#proof,
+#latest,
+#faq {
+  scroll-margin-top: var(--header-height, 5rem);
 }
 
 ::selection {
   background: rgba(141, 248, 255, 0.25);
   color: #f5fdff;
+}
+
+/* Touch targets: remove 300ms delay and use consistent tap highlight */
+a,
+button,
+input,
+textarea,
+select {
+  touch-action: manipulation;
+}
+a,
+button {
+  -webkit-tap-highlight-color: rgba(139, 244, 255, 0.2);
+}
+
+/* Footer: respect safe area on notched devices */
+.footer-safe {
+  padding-bottom: max(2.5rem, env(safe-area-inset-bottom));
 }

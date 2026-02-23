@@ -27,7 +27,38 @@ export const siteContent = {
   about:
     "I design platform foundations with failure modes in mind. My work focuses on Python automation, Kubernetes operations, Vault-driven security, and observability patterns that keep production stable under pressure. I also contribute to open source, including building PatchPulse, an AI-powered Kubernetes risk analysis platform.",
   contactStatement: "Let’s build resilient systems.",
+  email: "amarkdotdev@gmail.com",
+  linkedInUrl: "https://www.linkedin.com/in/amarkdotdev",
+  githubUrl: "https://github.com/amarkdotdev",
+  calendlyUrl: "https://calendly.com/amarkdotdev",
+  patchpulseUrl: "https://patchpulse.dev",
+  patchpulseRepoUrl: "https://github.com/amarkdotdev/patchpulse",
+  lastUpdated: "February 2026",
 };
+
+export const caseStudy = {
+  title: "PatchPulse: From idea to production",
+  problem: "Production incidents from risky Kubernetes changes were frequent and hard to catch before deploy.",
+  solution: "Built an open-source, self-hosted platform that runs AI-powered pre-flight risk analysis on every PR/MR, with policy gates and guardrails so teams can block or review before merge.",
+  outcome: "Teams can ship with confidence; risky changes are caught early with explainable evidence instead of post-incident firefighting.",
+};
+
+export const testimonial = {
+  quote: "Aaron’s the person we call when the platform has to stay up.",
+  attribution: "Engineering lead, platform team",
+};
+
+export const faq: { q: string; a: string }[] = [
+  { q: "Do you do contract or full-time?", a: "Both. I’m open to full-time roles and to contract/consulting for platform reliability, DevOps, and Python tooling." },
+  { q: "Remote or on-site?", a: "Remote-first. I’m based near Jerusalem and work with teams across time zones." },
+  { q: "What’s your availability?", a: "Reach out via the form or email and I’ll respond with current availability." },
+];
+
+export const latestUpdates: { label: string; href: string }[] = [
+  { label: "PatchPulse — AI-powered K8s risk analysis", href: "https://patchpulse.dev" },
+  { label: "GitHub: amarkdotdev/patchpulse", href: "https://github.com/amarkdotdev/patchpulse" },
+  { label: "OpenClaw / agent workflows evaluation", href: "#radar" },
+];
 
 export const currentRadar: RadarItem[] = [
   {

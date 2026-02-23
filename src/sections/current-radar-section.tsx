@@ -4,7 +4,7 @@ import { currentRadar } from "@/lib/site-data";
 
 export function CurrentRadarSection() {
   return (
-    <section id="radar" className="relative border-t border-white/[0.06] px-6 py-24 md:px-10">
+    <section id="radar" className="relative border-t border-white/[0.06] px-6 py-16 sm:px-8 sm:py-20 md:px-10 md:py-24">
       <div className="mx-auto w-full max-w-6xl space-y-12">
         <Reveal>
           <SectionHeading
@@ -18,8 +18,8 @@ export function CurrentRadarSection() {
           {currentRadar.map((item, index) => (
             <Reveal key={item.name} delay={index * 0.05}>
               <article className="rounded-3xl border border-white/[0.08] bg-white/[0.04] p-6 shadow-card-inner backdrop-blur-md">
-                <h3 className="text-lg font-semibold text-zinc-100">{item.name}</h3>
-                <p className="mt-2 text-sm leading-7 text-zinc-300">{item.note}</p>
+                <h3 className="break-words text-balance text-lg font-semibold leading-snug text-zinc-100">{item.name}</h3>
+                <p className="mt-2 max-w-[var(--max-line-length)] break-words text-pretty text-sm leading-[1.6] text-zinc-300">{item.note}</p>
               </article>
             </Reveal>
           ))}

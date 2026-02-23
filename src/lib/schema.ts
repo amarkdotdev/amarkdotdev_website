@@ -4,6 +4,7 @@ export function personJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://aaron-mark.dev/#person",
     name: siteContent.name,
     jobTitle: siteContent.role,
     address: {
@@ -11,6 +12,11 @@ export function personJsonLd() {
       addressLocality: siteContent.location,
       addressCountry: "IL",
     },
+    sameAs: [
+      siteContent.githubUrl,
+      siteContent.linkedInUrl,
+      siteContent.patchpulseUrl,
+    ],
     knowsAbout: [
       "Python",
       "DevOps",
@@ -27,5 +33,21 @@ export function personJsonLd() {
       "Open Source",
     ],
     description: siteContent.subheadline,
+  };
+}
+
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteContent.name,
+    url: "https://aaron-mark.dev",
+    description: siteContent.subheadline,
+    publisher: { "@type": "Person", "name": siteContent.name },
+    potentialAction: {
+      "@type": "ContactAction",
+      target: { "@type": "EntryPoint", urlTemplate: `mailto:${siteContent.email}` },
+      "http://schema.org/description": "Contact Aaron Mark",
+    },
   };
 }
