@@ -64,6 +64,33 @@ npm run start
 5. Output directory: leave default.
 6. Deploy.
 
+## CI/CD (GitHub Actions -> Vercel)
+
+This repo includes a pipeline at `.github/workflows/ci-cd.yml`.
+
+- On every push/PR to `main` or `master`, it runs:
+  - `npm ci`
+  - `npm run lint`
+  - `npm run test --if-present`
+  - `npm run build`
+- On push to `main`/`master`, if all checks pass, it deploys to **production** on Vercel.
+
+### Required GitHub Secrets
+
+Add these in GitHub -> Repository -> Settings -> Secrets and variables -> Actions:
+
+- `VERCEL_TOKEN`
+- `VERCEL_ORG_ID`
+- `VERCEL_PROJECT_ID`
+
+### How to get Vercel values
+
+1. `VERCEL_TOKEN`: Vercel dashboard -> Settings -> Tokens -> Create token
+2. `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID`:
+   - Run `vercel link` locally in the project
+   - Open `.vercel/project.json`
+   - Copy `orgId` and `projectId` into GitHub secrets
+
 ## Lighthouse 95+ Checklist
 
 - Keep images optimized and sized explicitly (`next/image` when real assets are added)

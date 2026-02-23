@@ -10,7 +10,7 @@
 body {
   background: var(--site-bg);
   color: var(--site-fg);
-  font-family: var(--font-inter), Inter, system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   min-height: 100vh;
   text-rendering: optimizeLegibility;
   font-feature-settings: "ss01" on, "cv11" on;
