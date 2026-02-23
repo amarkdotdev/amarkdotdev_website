@@ -30,7 +30,6 @@ export const siteContent = {
   email: "amarkdotdev@gmail.com",
   linkedInUrl: "https://www.linkedin.com/in/amarkdotdev",
   githubUrl: "https://github.com/amarkdotdev",
-  calendlyUrl: "https://calendly.com/amarkdotdev",
   patchpulseUrl: "https://patchpulse.dev",
   patchpulseRepoUrl: "https://github.com/amarkdotdev/patchpulse",
   lastUpdated: "February 2026",
@@ -49,9 +48,9 @@ export const testimonial = {
 };
 
 export const faq: { q: string; a: string }[] = [
-  { q: "Do you do contract or full-time?", a: "Both. I’m open to full-time roles and to contract/consulting for platform reliability, DevOps, and Python tooling." },
-  { q: "Remote or on-site?", a: "Remote-first. I’m based near Jerusalem and work with teams across time zones." },
-  { q: "What’s your availability?", a: "Reach out via the form or email and I’ll respond with current availability." },
+  { q: "Open to new roles?", a: "I’m a full-time engineer and open to the right platform or DevOps team. Not doing freelance or short-term contracts." },
+  { q: "Remote, on-site, or hybrid?", a: "I’m open to hybrid roles. I love working with people in person and also value focused time working from home when it makes sense." },
+  { q: "How to reach you?", a: "Use the form or email below. I’ll get back when I can." },
 ];
 
 export const latestUpdates: { label: string; href: string }[] = [

@@ -109,16 +109,6 @@ export function HeroSection() {
           >
             View Projects
           </a>
-          {siteContent.calendlyUrl && (
-            <a
-              href={siteContent.calendlyUrl}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-flex min-h-11 min-w-[44px] items-center rounded-full border border-white/20 bg-white/[0.06] px-6 py-3 text-sm font-medium text-zinc-100 transition hover:border-cyan-100/40 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-white/12 active:border-cyan-100/30"
-            >
-              Book a call
-            </a>
-          )}
         </motion.div>
       </div>
     </section>
