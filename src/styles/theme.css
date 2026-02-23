@@ -1,0 +1,20 @@
+:root {
+  --site-bg: #0b0b0f;
+  --site-fg: #e7ebf0;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-border-hover: rgba(139, 244, 255, 0.25);
+  --card-inner-highlight: rgba(255, 255, 255, 0.03);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
