@@ -47,7 +47,7 @@ export default function Home() {
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 border-t border-white/15 pt-8 text-xs leading-relaxed tracking-[0.14em] text-zinc-400 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
           <div className="shrink-0 space-y-1">
             <span className="block">{siteContent.name}</span>
-            <span className="block text-zinc-500">Site updated {siteContent.lastUpdated}</span>
+            <span className="block text-zinc-400">Site updated {siteContent.lastUpdated}</span>
           </div>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
             <a

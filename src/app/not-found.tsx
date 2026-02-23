@@ -10,13 +10,13 @@ export default function NotFound() {
       <div className="mt-8 flex flex-wrap justify-center gap-4">
         <Link
           href="/"
-          className="inline-flex min-h-11 items-center rounded-full bg-cyan-300/95 px-6 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-cyan-200"
+          className="inline-flex min-h-11 min-w-[44px] items-center rounded-full bg-cyan-300/95 px-6 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-cyan-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-cyan-200"
         >
           Homepage
         </Link>
         <Link
           href="/#contact"
-          className="inline-flex min-h-11 items-center rounded-full border border-white/20 bg-white/[0.06] px-6 py-3 text-sm font-medium text-zinc-100 transition hover:bg-white/10"
+          className="inline-flex min-h-11 min-w-[44px] items-center rounded-full border border-white/20 bg-white/[0.06] px-6 py-3 text-sm font-medium text-zinc-100 transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-white/12 active:border-cyan-100/30"
         >
           Contact
         </Link>

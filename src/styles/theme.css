@@ -1,9 +1,30 @@
 :root {
   --site-bg: #0b0b0f;
   --site-fg: #e7ebf0;
+  /* Refined accent palette: primary + variety for hierarchy and warmth */
+  --accent-cyan: #8bf4ff;
+  --accent-cyan-dim: rgba(139, 244, 255, 0.85);
+  --accent-teal: #5eead4;
+  --accent-teal-dim: rgba(94, 234, 212, 0.85);
+  --accent-violet: #c4b5fd;
+  --accent-violet-dim: rgba(196, 181, 253, 0.9);
+  --accent-amber: #fcd34d;
+  --accent-amber-dim: rgba(252, 211, 77, 0.9);
+  /* Glass and cards */
   --card-border: rgba(255, 255, 255, 0.08);
-  --card-border-hover: rgba(139, 244, 255, 0.25);
-  --card-inner-highlight: rgba(255, 255, 255, 0.03);
+  --card-border-hover: rgba(139, 244, 255, 0.22);
+  --card-border-accent: rgba(196, 181, 253, 0.2);
+  --card-inner-highlight: rgba(255, 255, 255, 0.04);
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  /* Premium focus: visible but soft */
+  --focus-ring: 2px solid rgba(139, 244, 255, 0.6);
+  --focus-ring-offset: 2px;
+  /* Softer glows and colored depth */
+  --shadow-glow-cyan: 0 0 60px rgba(139, 244, 255, 0.14);
+  --shadow-glow-violet: 0 0 50px rgba(196, 181, 253, 0.1);
+  --shadow-glow-soft: 0 0 80px rgba(139, 244, 255, 0.1);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.2);
   /* Fixed header height for scroll-padding and skip-link placement */
   --header-height: 5rem;
   /* Typography: 16px base avoids iOS zoom on input focus; 1.6 line-height for readability */
