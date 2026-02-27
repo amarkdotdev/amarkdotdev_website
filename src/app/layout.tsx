@@ -15,7 +15,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Aaron Mark | DevOps / Python Engineer",
+  title: "amark.dev | DevOps / Python Engineer",
   description:
     "DevOps and Python engineering focused on secure automation, Kubernetes operations, and resilient platform systems.",
   metadataBase: new URL("https://aaron-mark.dev"),
@@ -23,17 +23,17 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Aaron Mark | DevOps / Python Engineer",
+    title: "amark.dev | DevOps / Python Engineer",
     description:
       "Python automation, Kubernetes, Vault, and CI/CD for production infrastructure.",
     url: "https://aaron-mark.dev",
-    siteName: "Aaron Mark",
+    siteName: "amark.dev",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aaron Mark | DevOps / Python Engineer",
+    title: "amark.dev | DevOps / Python Engineer",
     description:
       "Infrastructure reliability, security automation, and production delivery.",
   },

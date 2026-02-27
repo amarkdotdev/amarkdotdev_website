@@ -141,7 +141,7 @@ export function TopNav() {
           href="#main-content"
           className="inline-flex min-h-11 min-w-[44px] items-center text-sm font-medium tracking-tight text-zinc-100 transition hover:text-cyan-100/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:opacity-80"
         >
-          {siteContent.name}
+          {siteContent.siteName ?? siteContent.name}
         </Link>
 
         <div className="hidden items-center gap-3 md:flex">

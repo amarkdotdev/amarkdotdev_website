@@ -20,6 +20,7 @@ export type RadarItem = {
 
 export const siteContent = {
   name: "Aaron Mark",
+  siteName: "amark.dev",
   role: "DevOps / Python Engineer · Open-Source Contributor",
   location: "Near Jerusalem, Israel",
   headline: "I build infrastructure that doesn’t break.",
