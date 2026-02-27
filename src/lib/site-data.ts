@@ -148,7 +148,7 @@ export const projects: Project[] = [
       "GitHub/GitLab",
       "Policy Engine",
     ],
-    href: "https://github.com/amarkdotdev/patchpulse-platform",
+    href: "https://github.com/amarkdotdev/patchpulse",
     badges: ["Open Source", "Self-Hosted"],
     visibility: "public",
   },
