@@ -148,7 +148,7 @@ export const projects: Project[] = [
       "GitHub/GitLab",
       "Policy Engine",
     ],
-    href: "https://github.com/amarkdotdev/patchpulse",
+    href: "https://github.com/amarkdotdev/patchpulse-platform",
     badges: ["Open Source", "Self-Hosted"],
     visibility: "public",
   },
@@ -157,6 +157,7 @@ export const projects: Project[] = [
     summary:
       "A Python-driven orchestration layer for safe cluster operations, policy enforcement, and repeatable rollout workflows.",
     stack: ["Python", "Kubernetes", "GitLab CI", "Helm"],
+    href: "https://github.com/amarkdotdev/kubernetes-automation-framework",
     visibility: "internal",
   },
   {
@@ -164,6 +165,7 @@ export const projects: Project[] = [
     summary:
       "An automation service that provisions short-lived credentials per workload and enforces role-based access boundaries.",
     stack: ["Vault", "Python", "Kubernetes", "Security"],
+    href: "https://github.com/amarkdotdev/vault-dynamic-secret-orchestration",
     visibility: "internal",
   },
   {
@@ -171,6 +173,7 @@ export const projects: Project[] = [
     summary:
       "A composable Python CLI that standardizes incident tasks, deployment workflows, and environment diagnostics.",
     stack: ["Python", "Typer", "Automation", "Platform Ops"],
+    href: "https://github.com/amarkdotdev/devops-cli-toolkit",
     visibility: "internal",
   },
   {
@@ -178,6 +181,7 @@ export const projects: Project[] = [
     summary:
       "A resilient observability deployment blueprint focused on log ingestion integrity, query performance, and retention strategy.",
     stack: ["OpenSearch", "Kubernetes", "Observability", "IaC"],
+    href: "https://github.com/amarkdotdev/opensearch-deployment-architecture",
     visibility: "internal",
   },
 ];
