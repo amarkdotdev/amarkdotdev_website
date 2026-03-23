@@ -4,9 +4,11 @@ export function personJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": "https://aaron-mark.dev/#person",
+    "@id": "https://amark.dev/#person",
     name: siteContent.name,
-    jobTitle: siteContent.role,
+    alternateName: ["Aharon Mark", "Aaron Mark DevOps", "amarkdotdev"],
+    jobTitle: "DevOps & Platform Engineer",
+    url: "https://amark.dev",
     address: {
       "@type": "PostalAddress",
       addressLocality: siteContent.location,
@@ -41,7 +43,7 @@ export function websiteJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: siteContent.name,
-    url: "https://aaron-mark.dev",
+    url: "https://amark.dev",
     description: siteContent.subheadline,
     publisher: { "@type": "Person", "name": siteContent.name },
     potentialAction: {

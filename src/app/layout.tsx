@@ -15,29 +15,50 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "amark.dev | DevOps / Platform Engineer",
+  title: "Aaron Mark — DevOps & Platform Engineer",
   description:
-    "DevOps and platform engineering focused on secure automation, Kubernetes operations, and resilient platform systems.",
-  metadataBase: new URL("https://aaron-mark.dev"),
+    "Aaron Mark (Aharon Mark) — DevOps and Platform Engineer specialising in Kubernetes, Vault secrets management, Python automation, and resilient CI/CD pipelines.",
+  metadataBase: new URL("https://amark.dev"),
   alternates: {
-    canonical: "/",
+    canonical: "https://amark.dev",
   },
+  keywords: [
+    "Aaron Mark",
+    "Aharon Mark",
+    "DevOps engineer",
+    "Platform engineer",
+    "Kubernetes engineer",
+    "infrastructure engineer",
+    "Python automation",
+    "Vault secrets management",
+    "CI/CD",
+    "amark.dev",
+  ],
+  authors: [{ name: "Aaron Mark", url: "https://amark.dev" }],
   openGraph: {
-    title: "amark.dev | DevOps / Platform Engineer",
+    title: "Aaron Mark — DevOps & Platform Engineer",
     description:
-      "Python automation, Kubernetes, Vault, and CI/CD for production infrastructure.",
-    url: "https://aaron-mark.dev",
+      "Kubernetes, Vault, Python automation, and CI/CD. I build infrastructure that doesn't break.",
+    url: "https://amark.dev",
     siteName: "amark.dev",
     locale: "en_US",
-    type: "website",
+    type: "profile",
+    firstName: "Aaron",
+    lastName: "Mark",
   },
   twitter: {
     card: "summary_large_image",
-    title: "amark.dev | DevOps / Platform Engineer",
+    title: "Aaron Mark — DevOps & Platform Engineer",
     description:
-      "Infrastructure reliability, security automation, and production delivery.",
+      "Kubernetes, Vault, Python automation, and CI/CD. I build infrastructure that doesn't break.",
+    creator: "@amarkdotdev",
   },
   icons: { icon: "/favicon.ico" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
 };
 
 export default function RootLayout({

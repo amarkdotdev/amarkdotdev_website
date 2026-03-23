@@ -13,6 +13,17 @@ const navLinks = [
   { href: "#contact", label: "Contact" },
 ];
 
+function LogoMark() {
+  return (
+    <span
+      aria-hidden
+      className="inline-flex h-[1.875rem] w-[1.875rem] shrink-0 items-center justify-center rounded-[7px] border border-cyan-400/30 bg-cyan-400/10 text-[13px] font-bold leading-none tracking-tight text-cyan-300 select-none"
+    >
+      A
+    </span>
+  );
+}
+
 function MenuIcon({ open }: { open: boolean }) {
   return (
     <span className="inline-flex size-6 shrink-0 items-center justify-center" aria-hidden>
@@ -139,8 +150,9 @@ export function TopNav() {
       >
         <Link
           href="#main-content"
-          className="inline-flex min-h-11 min-w-[44px] items-center text-sm font-medium tracking-tight text-zinc-100 transition hover:text-cyan-100/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:opacity-80"
+          className="inline-flex min-h-11 min-w-[44px] items-center gap-2.5 text-sm font-medium tracking-tight text-zinc-100 transition hover:text-cyan-100/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:opacity-80"
         >
+          <LogoMark />
           {siteContent.siteName ?? siteContent.name}
         </Link>
 
