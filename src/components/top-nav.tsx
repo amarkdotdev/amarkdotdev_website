@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { navigateToSection } from "@/lib/navigate";
 import { siteContent } from "@/lib/site-data";
@@ -147,7 +148,7 @@ export function TopNav() {
         className="relative mx-auto flex h-full max-w-6xl items-center justify-between px-6 py-4 sm:px-8 md:px-10"
       >
         {/* Logo — navigates to / (top of page) */}
-        <a
+        <Link
           href="/"
           onClick={(e) => {
             e.preventDefault();
@@ -158,7 +159,7 @@ export function TopNav() {
         >
           <LogoMark />
           {siteContent.siteName ?? siteContent.name}
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-3 md:flex">
