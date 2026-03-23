@@ -62,12 +62,12 @@ export const testimonial = {
 
 export const faq: { q: string; a: string }[] = [
   {
-    q: "Open to new roles?",
-    a: "I'm a full-time engineer open to the right platform or DevOps opportunity. If you're building a reliable platform and need someone who can own infra, automation, and security end-to-end, let's talk. Not doing freelance or short-term contracts.",
+    q: "What kind of problems do you solve?",
+    a: "Platform reliability gaps — risky deployments, fragile secrets management, observability blind spots, CI/CD that slows teams down. I build systems that remove those problems permanently.",
   },
   {
-    q: "Remote, on-site, or hybrid?",
-    a: "Open to hybrid roles. I value both focused heads-down time and working closely with a team in person when it matters.",
+    q: "How do you approach a new platform?",
+    a: "I start by mapping the failure modes — what breaks, how often, and why. From there I identify the automation gaps, security boundaries, and observability blind spots. The goal is always a platform where deployments are low-risk and on-call is boring.",
   },
   {
     q: "How to reach you?",
