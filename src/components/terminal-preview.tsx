@@ -95,7 +95,7 @@ export function TerminalPreview() {
           ? { duration: 0 }
           : { duration: 0.65, delay: 0.3, ease: [0.22, 1, 0.36, 1] }
       }
-      className="relative w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0d0d12]/90 shadow-2xl backdrop-blur-md"
+      className="relative w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0d0d12] shadow-2xl"
     >
       {/* Subtle top glow */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent" />
