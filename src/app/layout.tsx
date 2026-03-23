@@ -53,7 +53,6 @@ export const metadata: Metadata = {
       "Kubernetes, Vault, Python automation, and CI/CD. I build infrastructure that doesn't break.",
     creator: "@amarkdotdev",
   },
-  icons: { icon: "/favicon.ico" },
   robots: {
     index: true,
     follow: true,
