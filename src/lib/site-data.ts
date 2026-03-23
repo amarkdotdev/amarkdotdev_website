@@ -159,9 +159,9 @@ export const expertise: ExpertiseCategory[] = [
 
 export const techStack: TechGroup[] = [
   { category: "Platform & Ops", items: ["Kubernetes", "Helm", "Docker", "Linux"] },
-  { category: "Automation", items: ["Python", "FastAPI", "Typer", "Bash"] },
-  { category: "IaC & GitOps", items: ["Terraform", "OpenTofu", "Helm Charts", "GitOps"] },
-  { category: "CI/CD", items: ["GitLab CI", "Jenkins"] },
+  { category: "Scripting & APIs", items: ["Python", "FastAPI", "Bash"] },
+  { category: "IaC & GitOps", items: ["Terraform", "OpenTofu", "GitOps"] },
+  { category: "CI/CD", items: ["GitLab CI", "Jenkins", "GitHub Actions"] },
   { category: "Security", items: ["Vault", "RBAC", "Secret Rotation", "Policy Gates"] },
   { category: "Observability", items: ["OpenSearch", "OpenTelemetry"] },
 ];
