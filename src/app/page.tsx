@@ -19,12 +19,6 @@ import { TestimonialSection } from "@/sections/testimonial-section";
 export default function Home() {
   return (
     <>
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:right-4 focus:top-[var(--header-height,5rem)] focus:z-[70] focus:block focus:min-h-11 focus:rounded-md focus:bg-cyan-300 focus:px-4 focus:py-3 focus:text-center focus:text-sm focus:font-medium focus:text-zinc-950 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-      >
-        Skip to main content
-      </a>
       <SectionRouter />
       <BackgroundEffects />
       <TopNav />
