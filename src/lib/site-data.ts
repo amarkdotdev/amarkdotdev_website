@@ -34,7 +34,7 @@ export const siteContent = {
     "Platform reliability engineer. I automate the fragile parts, harden the security boundaries, and keep Kubernetes workloads running without surprises.",
   heroTrustSignals: ["Python", "Kubernetes", "Vault", "CI/CD", "OpenTelemetry"],
   about:
-    "I design platform foundations with failure modes in mind. My work spans Python automation, Kubernetes operations, Vault-driven secrets management, and observability patterns that keep production stable under pressure. I care about platforms where deployments are low-risk events, not high-stress ones — where on-call is boring because the alerting is precise and the runbooks are current. I also build in the open: PatchPulse is my self-hosted AI-powered pre-flight risk analysis platform for Kubernetes, built to catch risky changes before they reach production.",
+    "I design platform foundations with failure modes in mind. My work spans Python automation, Kubernetes operations, Vault-driven secrets management, and observability patterns that keep production stable under pressure. I work extensively across AWS — EC2, EKS, S3, IAM, VPC, and CloudWatch — and use AI tooling daily: Cursor, Claude Code, and GitHub Copilot are core to how I build. I care about platforms where deployments are low-risk events, not high-stress ones — where on-call is boring because the alerting is precise and the runbooks are current. I also build in the open: PatchPulse is my self-hosted AI-powered pre-flight risk analysis platform for Kubernetes, built to catch risky changes before they reach production.",
   contactStatement: "Let's build something reliable.",
   email: "amarkdotdev@gmail.com",
   linkedInUrl: "https://www.linkedin.com/in/amarkdotdev",
@@ -106,7 +106,7 @@ export const expertise: ExpertiseCategory[] = [
     summary: "Reliable platform operations built for sustained delivery.",
     points: [
       "Kubernetes cluster operations and workload hardening",
-      "Production runbooks, SLO-oriented maintenance, and release confidence",
+      "AWS infrastructure across EC2, EKS, S3, IAM, VPC, and CloudWatch",
       "Infrastructure patterns that prioritize uptime and blast-radius control",
     ],
   },
@@ -155,15 +155,26 @@ export const expertise: ExpertiseCategory[] = [
       "Automated checks that reduce manual error in releases",
     ],
   },
+  {
+    title: "AI-Augmented Engineering",
+    summary: "AI tools embedded into every layer of the engineering workflow.",
+    points: [
+      "Daily use of Cursor, Claude Code, and GitHub Copilot for accelerated development",
+      "AI-assisted code review, incident triage, and runbook generation",
+      "Building AI-powered platform tooling — PatchPulse applies LLMs to pre-flight risk analysis",
+    ],
+  },
 ];
 
 export const techStack: TechGroup[] = [
   { category: "Platform & Ops", items: ["Kubernetes", "Helm", "Docker", "Linux"] },
+  { category: "Cloud (AWS)", items: ["EC2", "EKS", "S3", "IAM", "VPC", "CloudWatch", "Lightsail"] },
   { category: "Scripting & APIs", items: ["Python", "FastAPI", "Bash"] },
   { category: "IaC & GitOps", items: ["Terraform", "OpenTofu", "GitOps"] },
   { category: "CI/CD", items: ["GitLab CI", "Jenkins", "GitHub Actions"] },
   { category: "Security", items: ["Vault", "RBAC", "Secret Rotation", "Policy Gates"] },
   { category: "Observability", items: ["OpenSearch", "OpenTelemetry"] },
+  { category: "AI Tooling", items: ["Cursor", "Claude Code", "GitHub Copilot"] },
 ];
 
 export const projects: Project[] = [
