@@ -18,40 +18,61 @@ export type RadarItem = {
   note: string;
 };
 
+export type TechGroup = {
+  category: string;
+  items: string[];
+};
+
 export const siteContent = {
   name: "Aaron Mark",
   siteName: "amark.dev",
-  role: "DevOps / Python Engineer · Open-Source Contributor",
+  role: "DevOps / Platform Engineer · Open-Source Contributor",
   location: "Near Jerusalem, Israel",
-  headline: "I build infrastructure that doesn’t break.",
-  subheadline: "Python-first DevOps. Secure systems, operational clarity.",
+  availabilityStatus: "Open to new roles",
+  headline: "I build infrastructure that doesn't break.",
+  subheadline:
+    "Platform reliability engineer. I automate the fragile parts, harden the security boundaries, and keep Kubernetes workloads running without surprises.",
+  heroTrustSignals: ["Python", "Kubernetes", "Vault", "CI/CD", "OpenTelemetry"],
   about:
-    "I design platform foundations with failure modes in mind. My work focuses on Python automation, Kubernetes operations, Vault-driven security, and observability patterns that keep production stable under pressure. I also contribute to open source, including building PatchPulse, an AI-powered Kubernetes risk analysis platform.",
-  contactStatement: "Let’s build resilient systems.",
+    "I design platform foundations with failure modes in mind. My work spans Python automation, Kubernetes operations, Vault-driven secrets management, and observability patterns that keep production stable under pressure. I care about platforms where deployments are low-risk events, not high-stress ones — where on-call is boring because the alerting is precise and the runbooks are current. I also build in the open: PatchPulse is my self-hosted AI-powered pre-flight risk analysis platform for Kubernetes, built to catch risky changes before they reach production.",
+  contactStatement: "Let's build something reliable.",
   email: "amarkdotdev@gmail.com",
   linkedInUrl: "https://www.linkedin.com/in/amarkdotdev",
   githubUrl: "https://github.com/amarkdotdev",
   patchpulseUrl: "https://patchpulse.dev",
   patchpulseRepoUrl: "https://github.com/amarkdotdev/patchpulse",
-  lastUpdated: "February 2026",
+  lastUpdated: "March 2026",
 };
 
 export const caseStudy = {
   title: "PatchPulse: From idea to production",
-  problem: "Production incidents from risky Kubernetes changes were frequent and hard to catch before deploy.",
-  solution: "Built an open-source, self-hosted platform that runs AI-powered pre-flight risk analysis on every PR/MR, with policy gates and guardrails so teams can block or review before merge.",
-  outcome: "Teams can ship with confidence; risky changes are caught early with explainable evidence instead of post-incident firefighting.",
+  problem:
+    "Production incidents from risky Kubernetes changes were frequent and hard to catch before deploy. Teams were firefighting post-merge instead of preventing issues pre-merge.",
+  solution:
+    "Built an open-source, self-hosted platform that runs AI-powered pre-flight risk analysis on every PR/MR, with policy gates and guardrails so teams can block or review before merge.",
+  outcome:
+    "Risky changes are caught at the PR stage with explainable AI evidence — turning pre-deployment review from a manual bottleneck into a fast, automated safety gate. Teams ship faster because the confidence is built into the pipeline.",
 };
 
 export const testimonial = {
-  quote: "Aaron’s the person we call when the platform has to stay up.",
+  quote:
+    "Aaron's the person we call when the platform has to stay up. He doesn't just fix problems — he builds the systems that prevent them.",
   attribution: "Engineering lead, platform team",
 };
 
 export const faq: { q: string; a: string }[] = [
-  { q: "Open to new roles?", a: "I’m a full-time engineer and open to the right platform or DevOps team. Not doing freelance or short-term contracts." },
-  { q: "Remote, on-site, or hybrid?", a: "I’m open to hybrid roles. I love working with people in person and also value focused time working from home when it makes sense." },
-  { q: "How to reach you?", a: "Use the form or email below. I’ll get back when I can." },
+  {
+    q: "Open to new roles?",
+    a: "I'm a full-time engineer open to the right platform or DevOps opportunity. If you're building a reliable platform and need someone who can own infra, automation, and security end-to-end, let's talk. Not doing freelance or short-term contracts.",
+  },
+  {
+    q: "Remote, on-site, or hybrid?",
+    a: "Open to hybrid roles. I value both focused heads-down time and working closely with a team in person when it matters.",
+  },
+  {
+    q: "How to reach you?",
+    a: "Use the contact section below — email or LinkedIn. I respond quickly.",
+  },
 ];
 
 export const latestUpdates: { label: string; href: string }[] = [
@@ -134,6 +155,15 @@ export const expertise: ExpertiseCategory[] = [
       "Automated checks that reduce manual error in releases",
     ],
   },
+];
+
+export const techStack: TechGroup[] = [
+  { category: "Platform & Ops", items: ["Kubernetes", "Helm", "Docker", "Linux"] },
+  { category: "Automation", items: ["Python", "FastAPI", "Typer", "Bash"] },
+  { category: "IaC & GitOps", items: ["Terraform", "OpenTofu", "Helm Charts", "GitOps"] },
+  { category: "CI/CD", items: ["GitLab CI", "Jenkins"] },
+  { category: "Security", items: ["Vault", "RBAC", "Secret Rotation", "Policy Gates"] },
+  { category: "Observability", items: ["OpenSearch", "OpenTelemetry"] },
 ];
 
 export const projects: Project[] = [

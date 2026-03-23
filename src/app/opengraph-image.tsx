@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Aaron Mark — DevOps / Python Engineer";
+export const dynamic = "force-static";
+export const alt = "Aaron Mark — DevOps / Platform Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -27,7 +28,7 @@ export default function OgImage() {
           I build infrastructure that doesn&apos;t break.
         </div>
         <div style={{ fontSize: 24, color: "#94a3b8", marginTop: 24 }}>
-          DevOps / Python Engineer · Open-Source Contributor
+          DevOps / Platform Engineer · Open-Source Contributor
         </div>
       </div>
     ),

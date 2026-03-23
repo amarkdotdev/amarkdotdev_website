@@ -1,4 +1,5 @@
-import { ContactForm } from "@/components/contact-form";
+"use client";
+
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { siteContent } from "@/lib/site-data";
@@ -14,22 +15,32 @@ export function ContactSection() {
           <SectionHeading
             eyebrow="Contact"
             title={siteContent.contactStatement}
-            description="If you run a platform where reliability matters, reach out."
+            description="If you're building a platform team or hiring for DevOps and want someone who can own infra, automation, and security end-to-end — reach out."
           />
         </Reveal>
 
         <Reveal delay={0.08}>
           <div className="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.04] p-6 shadow-card-inner backdrop-blur-md transition hover:border-white/[0.12] md:p-8">
-            <ContactForm />
-            <p className="mt-6 text-center text-sm text-zinc-400">
-              Or email me directly:{" "}
+            <p className="text-sm leading-7 text-zinc-300">
+              I respond quickly. Email me or connect on LinkedIn — happy to jump on a call.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a
                 href={`mailto:${siteContent.email}`}
-                className="font-medium text-cyan-200/90 underline decoration-cyan-200/40 underline-offset-2 transition hover:text-cyan-100"
+                className="inline-flex min-h-11 min-w-[44px] items-center justify-center rounded-full bg-cyan-300/95 px-6 py-3 text-sm font-semibold text-zinc-950 shadow-glow transition hover:bg-cyan-200 hover:shadow-glow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-cyan-200"
               >
-                {siteContent.email}
+                Email me
               </a>
-            </p>
+              <a
+                href={siteContent.linkedInUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex min-h-11 min-w-[44px] items-center justify-center rounded-full border border-white/20 bg-white/[0.06] px-6 py-3 text-sm font-medium text-zinc-100 transition hover:border-cyan-100/40 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-white/12"
+              >
+                LinkedIn
+              </a>
+            </div>
+            <p className="mt-4 font-mono text-xs text-zinc-500">{siteContent.email}</p>
           </div>
         </Reveal>
       </div>

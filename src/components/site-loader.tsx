@@ -10,7 +10,7 @@ export function SiteLoader() {
   useEffect(() => {
     const timer = window.setTimeout(
       () => setIsVisible(false),
-      prefersReducedMotion ? 250 : 950,
+      prefersReducedMotion ? 0 : 200,
     );
     return () => window.clearTimeout(timer);
   }, [prefersReducedMotion]);
@@ -23,7 +23,7 @@ export function SiteLoader() {
           initial={{ opacity: 1 }}
           exit={{
             opacity: 0,
-            transition: { duration: prefersReducedMotion ? 0 : 0.45, ease: "easeOut" },
+            transition: { duration: prefersReducedMotion ? 0 : 0.2, ease: "easeOut" },
           }}
         >
           <div className="flex items-center gap-3 text-sm uppercase tracking-[0.22em] text-cyan-100/75">
