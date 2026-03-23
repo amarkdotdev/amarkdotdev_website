@@ -31,7 +31,7 @@ function LogoMark() {
         className="fill-cyan-400/[0.12] stroke-cyan-400/50"
         strokeWidth="1.5"
       />
-      <polygon points="14,7 21,20.5 7,20.5" className="fill-cyan-400" />
+      <polygon points="14,6 21,18 7,18" className="fill-cyan-400" />
     </svg>
   );
 }
