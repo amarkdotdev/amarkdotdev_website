@@ -175,7 +175,7 @@ export function TopNav() {
             role="dialog"
             aria-label="Site navigation menu"
             hidden={!isMenuOpen}
-            className="absolute right-0 top-full z-50 mt-2 flex max-h-[min(70vh,400px)] w-52 min-w-0 flex-col gap-2 overflow-y-auto overflow-x-hidden rounded-2xl border border-white/10 bg-site-bg/95 p-2 shadow-lg backdrop-blur-xl"
+            className="absolute right-0 top-full z-50 mt-2 flex max-h-[min(70vh,400px)] w-52 max-w-[calc(100vw-3rem)] min-w-0 flex-col gap-2 overflow-y-auto overflow-x-hidden rounded-2xl border border-white/10 bg-site-bg/95 p-2 shadow-lg backdrop-blur-xl"
           >
             {navLinks.map((link) => (
               <Link

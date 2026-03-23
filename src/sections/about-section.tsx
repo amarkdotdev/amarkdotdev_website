@@ -27,7 +27,7 @@ export function AboutSection() {
             <p className="mb-6 text-xs font-medium uppercase tracking-[0.24em] text-cyan-200/85">
               Tech Stack
             </p>
-            <div className="grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-3 lg:grid-cols-6">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 md:grid-cols-3 lg:grid-cols-6 lg:gap-x-8 lg:gap-y-6">
               {techStack.map((group) => (
                 <div key={group.category}>
                   <p className="mb-2.5 text-[10px] uppercase tracking-[0.16em] text-zinc-500">

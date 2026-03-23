@@ -39,7 +39,7 @@ export function HeroSection() {
               ? { duration: 0 }
               : { duration: 0.5, delay: 0.05, ease: [0.22, 1, 0.36, 1] }
           }
-          className="max-w-5xl break-words text-balance text-3xl font-semibold leading-[1.15] tracking-tight text-zinc-50 sm:text-4xl md:text-6xl md:leading-tight lg:text-7xl"
+          className="max-w-5xl break-words text-balance text-3xl font-semibold leading-tight tracking-tight text-zinc-50 sm:text-4xl sm:leading-[1.15] md:text-6xl md:leading-tight lg:text-7xl"
         >
           <span className="bg-gradient-to-b from-zinc-50 to-zinc-300/90 bg-clip-text text-transparent">
             {siteContent.headline}
@@ -68,14 +68,14 @@ export function HeroSection() {
               ? { duration: 0 }
               : { duration: 0.45, delay: 0.15, ease: [0.22, 1, 0.36, 1] }
           }
-          className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2"
+          className="mt-8 flex flex-wrap gap-2"
         >
-          {siteContent.heroTrustSignals.map((signal, i) => (
-            <span key={signal} className="flex items-center gap-x-5">
-              <span className="text-sm font-medium text-zinc-300">{signal}</span>
-              {i < siteContent.heroTrustSignals.length - 1 && (
-                <span aria-hidden className="text-zinc-600">·</span>
-              )}
+          {siteContent.heroTrustSignals.map((signal) => (
+            <span
+              key={signal}
+              className="rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-xs tracking-[0.1em] text-zinc-300"
+            >
+              {signal}
             </span>
           ))}
         </motion.div>
