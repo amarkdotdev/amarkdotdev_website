@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { TerminalPreview } from "@/components/terminal-preview";
+import { navigateToSection } from "@/lib/navigate";
 import { siteContent } from "@/lib/site-data";
 
 export function HeroSection() {
@@ -82,13 +83,15 @@ export function HeroSection() {
               className="mt-10 flex flex-wrap gap-4"
             >
               <a
-                href="#contact"
+                href="/contact"
+                onClick={(e) => { e.preventDefault(); navigateToSection("#contact", "/contact"); }}
                 className="inline-flex min-h-11 min-w-[44px] items-center rounded-full bg-cyan-300/95 px-6 py-3 text-sm font-semibold text-zinc-950 shadow-glow transition hover:bg-cyan-200 hover:shadow-glow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/70 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-cyan-200 active:shadow-glow-soft"
               >
                 Get in Touch
               </a>
               <a
-                href="#projects"
+                href="/projects"
+                onClick={(e) => { e.preventDefault(); navigateToSection("#projects", "/projects"); }}
                 className="inline-flex min-h-11 min-w-[44px] items-center rounded-full border border-white/20 bg-white/[0.06] px-6 py-3 text-sm font-medium text-zinc-100 transition hover:border-cyan-100/40 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-white/12 active:border-cyan-100/30"
               >
                 View Projects

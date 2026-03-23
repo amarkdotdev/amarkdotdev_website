@@ -1,4 +1,5 @@
 import { BackgroundEffects } from "@/components/background-effects";
+import { SectionRouter } from "@/components/section-router";
 import { TopNav } from "@/components/top-nav";
 import { siteContent } from "@/lib/site-data";
 import { AboutSection } from "@/sections/about-section";
@@ -24,6 +25,7 @@ export default function Home() {
       >
         Skip to main content
       </a>
+      <SectionRouter />
       <BackgroundEffects />
       <TopNav />
       <main id="main-content" className="relative">

@@ -1,26 +1,38 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { navigateToSection } from "@/lib/navigate";
 import { siteContent } from "@/lib/site-data";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#expertise", label: "Expertise" },
-  { href: "#projects", label: "Projects" },
-  { href: "#principles", label: "Principles" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "Contact" },
+  { hash: "#about",      path: "/about",      label: "About" },
+  { hash: "#expertise",  path: "/expertise",  label: "Expertise" },
+  { hash: "#projects",   path: "/projects",   label: "Projects" },
+  { hash: "#principles", path: "/principles", label: "Principles" },
+  { hash: "#faq",        path: "/faq",        label: "FAQ" },
+  { hash: "#contact",    path: "/contact",    label: "Contact" },
 ];
 
+/** Circle with right-pointing triangle — mirrors the favicon, in the site's cyan */
 function LogoMark() {
   return (
-    <span
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+      fill="none"
       aria-hidden
-      className="inline-flex h-[1.875rem] w-[1.875rem] shrink-0 items-center justify-center rounded-[7px] border border-cyan-400/30 bg-cyan-400/10 text-[13px] font-bold leading-none tracking-tight text-cyan-300 select-none"
+      className="shrink-0"
     >
-      A
-    </span>
+      <circle
+        cx="14"
+        cy="14"
+        r="13"
+        className="fill-cyan-400/[0.12] stroke-cyan-400/50"
+        strokeWidth="1.5"
+      />
+      <polygon points="10.5,8.5 21,14 10.5,19.5" className="fill-cyan-400" />
+    </svg>
   );
 }
 
@@ -45,18 +57,18 @@ export function TopNav() {
   const menuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuPanelRef = useRef<HTMLDivElement>(null);
-  const pendingHashRef = useRef<string | null>(null);
+  const pendingNavRef = useRef<{ hash: string; path: string } | null>(null);
 
-  // When menu closes, scroll to pending hash after body scroll lock is restored
+  // When mobile menu closes, scroll to pending section after scroll-lock releases
   useEffect(() => {
     if (isMenuOpen) return;
-    const hash = pendingHashRef.current;
-    if (!hash) return;
-    pendingHashRef.current = null;
+    const pending = pendingNavRef.current;
+    if (!pending) return;
+    pendingNavRef.current = null;
     if (typeof window === "undefined") return;
-    const el = document.querySelector(hash);
+    const el = document.querySelector(pending.hash);
     if (el) {
-      window.history.replaceState(null, "", hash);
+      window.history.pushState(null, "", pending.path);
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const raf = requestAnimationFrame(() => {
         requestAnimationFrame(() => {
@@ -67,11 +79,9 @@ export function TopNav() {
     }
   }, [isMenuOpen]);
 
-  // Close on Escape, trap focus when open, return focus to button on close
+  // Close on Escape, trap focus, return focus on close
   useEffect(() => {
-    if (!isMenuOpen) {
-      return;
-    }
+    if (!isMenuOpen) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -79,35 +89,23 @@ export function TopNav() {
         menuButtonRef.current?.focus();
         return;
       }
-      // Focus trap: keep Tab/Shift+Tab within menu panel
       if (event.key !== "Tab") return;
       const panel = menuPanelRef.current;
       if (!panel) return;
-      const focusables = panel.querySelectorAll<HTMLElement>(
-        'a[href], button:not([disabled])'
-      );
+      const focusables = panel.querySelectorAll<HTMLElement>('a[href], button:not([disabled])');
       const first = focusables[0];
       const last = focusables[focusables.length - 1];
       if (event.shiftKey) {
-        if (document.activeElement === first) {
-          event.preventDefault();
-          last?.focus();
-        }
+        if (document.activeElement === first) { event.preventDefault(); last?.focus(); }
       } else {
-        if (document.activeElement === last) {
-          event.preventDefault();
-          first?.focus();
-        }
+        if (document.activeElement === last) { event.preventDefault(); first?.focus(); }
       }
     };
 
     const handlePointerDown = (event: PointerEvent) => {
-      if (!menuRef.current?.contains(event.target as Node)) {
-        setIsMenuOpen(false);
-      }
+      if (!menuRef.current?.contains(event.target as Node)) setIsMenuOpen(false);
     };
 
-    // Move focus into menu when it opens (first link), after paint
     const t = setTimeout(() => {
       menuPanelRef.current?.querySelector<HTMLElement>("a")?.focus();
     }, 0);
@@ -121,7 +119,7 @@ export function TopNav() {
     };
   }, [isMenuOpen]);
 
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll while mobile menu is open
   useEffect(() => {
     if (typeof window === "undefined") return;
     const isMobile = window.matchMedia("(max-width: 767px)").matches;
@@ -148,26 +146,35 @@ export function TopNav() {
         aria-label="Main navigation"
         className="relative mx-auto flex h-full max-w-6xl items-center justify-between px-6 py-4 sm:px-8 md:px-10"
       >
-        <Link
-          href="#main-content"
+        {/* Logo — navigates to / (top of page) */}
+        <a
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState(null, "", "/");
+            window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+          }}
           className="inline-flex min-h-11 min-w-[44px] items-center gap-2.5 text-sm font-medium tracking-tight text-zinc-100 transition hover:text-cyan-100/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:opacity-80"
         >
           <LogoMark />
           {siteContent.siteName ?? siteContent.name}
-        </Link>
+        </a>
 
+        {/* Desktop nav */}
         <div className="hidden items-center gap-3 md:flex">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
+            <a
+              key={link.path}
+              href={link.path}
+              onClick={(e) => { e.preventDefault(); navigateToSection(link.hash, link.path); }}
               className="flex min-h-11 min-w-[44px] items-center rounded-lg px-4 py-3 text-xs tracking-[0.12em] text-zinc-300 transition hover:bg-white/5 hover:text-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-white/8 active:text-zinc-100"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </div>
 
+        {/* Mobile menu button + panel */}
         <div ref={menuRef} className="relative md:hidden">
           <button
             ref={menuButtonRef}
@@ -190,18 +197,18 @@ export function TopNav() {
             className="absolute right-0 top-full z-50 mt-2 flex max-h-[min(70vh,400px)] w-52 max-w-[calc(100vw-3rem)] min-w-0 flex-col gap-2 overflow-y-auto overflow-x-hidden rounded-2xl border border-white/10 bg-site-bg/95 p-2 shadow-lg backdrop-blur-xl"
           >
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
+              <a
+                key={link.path}
+                href={link.path}
                 onClick={(e) => {
                   e.preventDefault();
-                  pendingHashRef.current = link.href;
+                  pendingNavRef.current = { hash: link.hash, path: link.path };
                   setIsMenuOpen(false);
                 }}
                 className="flex min-h-11 min-w-0 items-center break-words rounded-lg px-4 py-3 text-sm leading-snug text-zinc-200 transition hover:bg-white/8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:bg-white/10"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
