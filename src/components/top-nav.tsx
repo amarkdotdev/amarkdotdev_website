@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { navigateToSection } from "@/lib/navigate";
-import { siteContent } from "@/lib/site-data";
 
 const navLinks = [
   { hash: "#about",      path: "/about",      label: "About" },
@@ -32,7 +31,7 @@ function LogoMark() {
         className="fill-cyan-400/[0.12] stroke-cyan-400/50"
         strokeWidth="1.5"
       />
-      <polygon points="10.5,8.5 21,14 10.5,19.5" className="fill-cyan-400" />
+      <polygon points="14,7 21,20.5 7,20.5" className="fill-cyan-400" />
     </svg>
   );
 }
@@ -158,7 +157,6 @@ export function TopNav() {
           className="inline-flex min-h-11 min-w-[44px] items-center gap-2.5 text-sm font-medium tracking-tight text-zinc-100 transition hover:text-cyan-100/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg active:opacity-80"
         >
           <LogoMark />
-          {siteContent.siteName ?? siteContent.name}
         </Link>
 
         {/* Desktop nav */}
