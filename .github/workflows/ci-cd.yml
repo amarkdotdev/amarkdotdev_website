@@ -37,7 +37,7 @@ jobs:
         run: npm run build
 
   deploy:
-    name: Deploy to Lightsail
+    name: Deploy to S3 + CloudFront
     runs-on: ubuntu-latest
     needs: ci
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -59,23 +59,20 @@ jobs:
       - name: Build static export
         run: npm run build
 
-      - name: Deploy to Lightsail
-        env:
-          DEPLOY_KEY: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Sync to S3
         run: |
-          echo "$DEPLOY_KEY" > /tmp/deploy_key
-          chmod 600 /tmp/deploy_key
+          aws s3 sync out/ s3://${{ secrets.AMARK_S3_BUCKET }}/ \
+            --delete
 
-          # Upload built files to a temp location on the server
-          rsync -az --delete \
-            -e "ssh -i /tmp/deploy_key -o StrictHostKeyChecking=no" \
-            out/ \
-            ubuntu@99.80.30.152:/tmp/amark-deploy/
-
-          # Atomically swap into the web root
-          ssh -i /tmp/deploy_key -o StrictHostKeyChecking=no ubuntu@99.80.30.152 \
-            "sudo rsync -a --delete /tmp/amark-deploy/ /var/www/amark.dev/ && \
-             sudo chown -R www-data:www-data /var/www/amark.dev/ && \
-             rm -rf /tmp/amark-deploy"
-
-          rm /tmp/deploy_key
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.AMARK_CF_DISTRIBUTION_ID }} \
+            --paths "/*"
