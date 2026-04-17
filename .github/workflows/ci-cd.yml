@@ -69,7 +69,11 @@ jobs:
       - name: Sync to S3
         run: |
           aws s3 sync out/ s3://${{ secrets.AMARK_S3_BUCKET }}/ \
-            --delete
+            --delete \
+            --exclude "dudebot/*" \
+            --exclude "dudebot.html" \
+            --exclude "patchpulse/*" \
+            --exclude "patchpulse.html"
 
       - name: Invalidate CloudFront cache
         run: |
