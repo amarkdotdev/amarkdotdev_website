@@ -179,6 +179,15 @@ export const techStack: TechGroup[] = [
 
 export const projects: Project[] = [
   {
+    title: "dudbot λ",
+    summary:
+      "Serverless smart water boiler controller for a solar-heated home. Reads weather data, scores the day with a custom solar efficiency algorithm, respects Shabbat and Yom Tov, and runs the electric backup for exactly the right number of minutes — at $0.00/month.",
+    stack: ["Python", "AWS Lambda", "EventBridge", "S3", "Terraform"],
+    href: "/dudebot",
+    badges: ["Open Source", "Live"],
+    visibility: "public",
+  },
+  {
     title: "PatchPulse.dev",
     summary:
       "Open-source, self-hosted AI-powered pre-flight risk analysis for Kubernetes that blocks risky changes before they reach production.",
